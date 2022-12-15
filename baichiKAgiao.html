@@ -8,12 +8,12 @@
 <script>
     let a;
     let b;
-    let soult="<table border='1'>";
+    let soult="<table border='2'>";
     for (a=1;a<=9;a++){
         soult=soult+"<tr>";
-            for (b=2;b<=9;b++){
-                soult=soult +"<td>" +( b )+ " * " +(a) + " = " + (a*b )+ "</td>"
-            } soult =soult+"</tr>";
+        for (b=1;b<=10;b++){
+            soult=soult +"<td>" +( b )+ " * " +(a) + " = " + (a*b )+ "</td>"
+        } soult =soult+"</tr>";
     } soult = soult + "<table/>";
     document.write(soult);
 </script>

@@ -6,25 +6,25 @@
 </head>
 <body>
 
- <script>
-     let fi;
-     let n2=1;
-   let n1=0;
-   let b=parseInt(prompt("nhập số lượng cần in"))
-   count=2
-  fi=n1 +n2;
-   document.write(n1);
-   document.write(n2);
-   fi=n1+n2;
-     while (count<=(b-1)){
+<script>
+    let fi;
+    let n2 = 1;
+    let n1 = 0;
+    let b = parseInt(prompt("nhập số lượng cần in"))
+   let count = 2;
+    fi = n1 + n2;
+   // document.write(n1);
+   // document.write(n2);
+    fi = n1 + n2;
+    while (count <= b) {
+        document.write(fi)
+        n1 = n2;
+        n2 = fi;
+        fi = n1 + n2;
+        count++;
+    }
 
-         document.write(fi)
-         n1=n2;
-       n2=fi;fi=n1+n2;
-       count++;
 
-     }
-
- </script>
+</script>
 </body>
 </html>

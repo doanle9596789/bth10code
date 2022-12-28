@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="productName">
+<input type="text" id="price">
+<input type="text" id="number">
+<input type="text" id="img">
+<button onclick="createNewProduct()">Thêm sản phẩm</button>
+<br>
+<span id="numberOfProduct"></span>
+<table border="2px">
+    <tr>
+        <td> Loại cây</td>
+        <td> Gía </td>
+        <td> Số lượng</td>
+        <td> Link</td>
+        <td> Hình ảnh </td>
+
+        <td> Xóa </td>
+    </tr>
+
+    <tbody id="listProduct"></tbody>
+</table>
+</body>
+<script>
+    class Product {
+        constructor(name, price, number, img) {
+            this.name = name;
+            this.price = price;
+            this.number = number;
+            this.img = img;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(value) {
+            this.name = value;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPrice(value) {
+            this.price = value;
+        }
+
+        getNumber() {
+            return this.number;
+        }
+
+        setNumber(value) {
+            this.number = value;
+        }
+        getImg(){
+            return this.img;
+        }
+        setImg(value) {
+            this.img = value;
+        }
+    }
+    let products = [
+        new Product('bonsai',300,10,"https://tse3.mm.bing.net/th?id=OIP.VYzuLOiB65uxhCtcshGOfgHaH3&pid=Api&P=0"),
+        new Product('cothu',2200,30,"")
+        new Product('anqua',500,20,"https://tse4.mm.bing.net/th?id=OIP.lI5obK9JExQde9k09Ki_7gHaFj&pid=Api&P=0"),
+    ];
+    function showProduct(){
+        let count = "";
+        let numberProduct=0;
+        for (let i= 0;i<products.length;i++){
+            numberProduct += products[i].number
+            count += "<tr>" +
+                "<td>"+ products[i].name + "</td>" +
+                "<td>"+ products[i].price + "</td>" +
+                "<td>"+ products[i].number + "</td>" +
+                "<td>"+ products[i].img +"</td>" +
+                "<td><img src='"+products[i].img +"'></td>"+
+                "<td><button onclick='deleteByIndex("+i+")'>Xóa hết</button> </td>"+
+                "</tr>"
+        }
+        document.getElementById("listProduct").innerHTML= count;
+        document.getElementById("numberOfProduct").innerHTML= numberProduct.toString();
+    }
+    showProduct();
+    function createNewProduct(){
+        let name = document.getElementById("productName").value;
+        let price = document.getElementById("price").value;
+        let number = document.getElementById("number").value;
+        let img = document.getElementById("number").value;
+        let newP = new Product(name,price,Number(number),img);
+        products.push(newP);
+        showProduct();
+    }
+    function deleteByIndex(index){
+        products.splice(index,1);
+        showProduct();
+    }
+
+</script>
+</html>

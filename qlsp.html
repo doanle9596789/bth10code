@@ -14,10 +14,10 @@
 <span id="numberOfProduct"></span>
 <table border="2px">
     <tr>
-        <td> Loại cây</td>
-        <td> Gía </td>
+        <td> Xuất xứ</td>
+        <td> Gía sản phẩm</td>
         <td> Số lượng</td>
-        <td> Link</td>
+        <td> Link ảnh</td>
         <td> Hình ảnh </td>
 
         <td> Xóa </td>
@@ -66,9 +66,9 @@
         }
     }
     let products = [
-        new Product('bonsai',300,10,"https://tse3.mm.bing.net/th?id=OIP.VYzuLOiB65uxhCtcshGOfgHaH3&pid=Api&P=0"),
-        new Product('cothu',2200,30,"")
-        new Product('anqua',500,20,"https://tse4.mm.bing.net/th?id=OIP.lI5obK9JExQde9k09Ki_7gHaFj&pid=Api&P=0"),
+        new Product('Cây bon sai',1200,100,"https://tse2.mm.bing.net/th?id=OIP.2s5IpnouI1yf0FFg6YCo2gHaHa&pid=Api&P=0"),
+        new Product('Cây ăn qua',3200,50,"https://tse3.mm.bing.net/th?id=OIP.rZfJoJDrld-BBIayoleJiQHaJV&pid=Api&P=0"),
+        new Product('Cây cổ thụ',300,20,"https://tse1.mm.bing.net/th?id=OIP.hylN2Omk1XBR_wBapX8BwAHaFy&pid=Api&P=0"),
     ];
     function showProduct(){
         let count = "";
@@ -81,7 +81,7 @@
                 "<td>"+ products[i].number + "</td>" +
                 "<td>"+ products[i].img +"</td>" +
                 "<td><img src='"+products[i].img +"'></td>"+
-                "<td><button onclick='deleteByIndex("+i+")'>Xóa hết</button> </td>"+
+                "<td><button onclick='deleteByIndex("+i+")'>Xóa sản phẩm</button> </td>"+
                 "</tr>"
         }
         document.getElementById("listProduct").innerHTML= count;
